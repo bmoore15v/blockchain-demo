@@ -1,4 +1,10 @@
 # Blockchain Demo
+
+## [BMOORE15V](https://github.com/bmoore15v/) 12/3/2020 Update
+- Updated the whole site to Bootstrap 5
+- Refactored server side code by removing "body-parser"
+- Added Keys & Signature Demo to the navigation and combiined the js code into this one repo
+
 A web-based demonstration of blockchain concepts.
 
 [![Blockchain 101 - Demo](https://img.youtube.com/vi/_160oMzblY8/0.jpg)](https://www.youtube.com/watch?v=_160oMzblY8)
