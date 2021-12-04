@@ -1,53 +1,53 @@
 doctype html
 html
   head
-    meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    meta(name='description', content='A live blockchain demo in a browser.')
-    meta(name='author', content='Anders Brownworth')
-    link(rel='icon', href='/favicon.ico')
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name="description", content="A live blockchain and public / private key pair demo in a browser.")
+    meta(name="author", content="Anders Brownworth")
+    link(rel="icon", href="/favicon.ico")
 
-    title Blockchain Demo
+    title Blockchain: Visual Demo
 
-    link(rel='stylesheet', href='/stylesheets/lib/bootstrap.min.css')
-    link(rel='stylesheet', href='/stylesheets/lib/bootstrap-theme.min.css')
-    link(rel='stylesheet', href='/stylesheets/lib/bootstrap-horizon.css')
-    link(rel='stylesheet', href='/stylesheets/lib/ladda-themeless.min.css')
-    link(rel='stylesheet', href='/stylesheets/lib/ie10-viewport-bug-workaround.css')
-    link(rel='stylesheet', href='/stylesheets/blockchain.css')
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css", integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3", crossorigin="anonymous")
+    link(rel="stylesheet", href="/stylesheets/lib/ladda-themeless.min.css")
+    link(rel="stylesheet", href="/stylesheets/lib/ie10-viewport-bug-workaround.css")
+    link(rel="stylesheet", href="/stylesheets/blockchain.css")
+    link(rel="stylesheet", href="/stylesheets/lib/bootstrap-horizon.css")
+    link(rel="stylesheet", href="/stylesheets/lib/offcanvas.css")
 
-    script(src='/javascripts/lib/jquery.min.js')
-    script(src='/javascripts/lib/bootstrap.min.js')
-    script(src='/javascripts/lib/spin.min.js')
-    script(src='/javascripts/lib/ladda.min.js')
-    script(src='/javascripts/lib/ie10-viewport-bug-workaround.js')
-    script(src='/javascripts/lib/sha256.js')
-    script(src='/javascripts/blockchain.js')
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+    
+    script(src="/javascripts/lib/spin.min.js")
+    script(src="/javascripts/lib/ladda.min.js")
+    script(src="/javascripts/lib/ie10-viewport-bug-workaround.js")
+    script(src="/javascripts/lib/sha256.js")
+    script(src="/javascripts/blockchain.js")
 
   body
-    nav.navbar.navbar-inverse.navbar-fixed-top
+    nav.navbar.navbar-expand-lg.fixed-top.navbar-dark.bg-dark.bg-gradient.p-3(aria-label="Main navigation")
       .container
-        .navbar-header
-          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
-            span.sr-only Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          a.navbar-brand(href='/') #{__('Blockchain Demo')}
-        #navbar.collapse.navbar-collapse
-          ul.nav.navbar-nav.navbar-right
-            li(class={active: page === 'hash'})
-              a(href='/hash') #{__('Hash')}
-            li(class={active: page === 'block'})
-              a(href='/block') #{__('Block')}
-            li(class={active: page === 'blockchain'})
-              a(href='/blockchain') #{__('Blockchain')}
-            li(class={active: page === 'distributed'})
-              a(href='/distributed') #{__('Distributed')}
-            li(class={active: page === 'tokens'})
-              a(href='/tokens') #{__('Tokens')}
-            li(class={active: page === 'coinbase'})
-              a(href='/coinbase') #{__('Coinbase')}
+        a.navbar-brand.text-capitalized(href="/") #{("Blockchain: Visual Demo")}
+        button.navbar-toggler.p-0.border-0#navbarSideCollapse(type="button", aria-label="Toggle navigation")
+          span.navbar-toggler-icon
+        .navbar-collapse.offcanvas-collapse#navbarsExampleDefault
+          ul.navbar-nav.ms-auto.mb-0.mb-lg-0
+            li.nav-item
+              a.nav-link.text-uppercase(class={active: page === "hash"}, class={"text-decoration-underline": page === "hash"}, href="/hash") #{("Hash")}
+            li.nav-item
+              a.nav-link.text-uppercase(class={active: page === "block"}, class={"text-decoration-underline": page === "block"}, href="/block") #{("Block")}
+            li.nav-item
+              a.nav-link.text-uppercase(class={active: page === "blockchain"}, class={"text-decoration-underline": page === "blockchain"}, href="/blockchain") #{("Blockchain")}
+            li.nav-item
+              a.nav-link.text-uppercase(class={active: page === "distributed"}, class={"text-decoration-underline": page === "distributed"}, href="/distributed") #{("Distributed")}
+            li.nav-item
+              a.nav-link.text-uppercase(class={active: page === "tokens"}, class={"text-decoration-underline": page === "tokens"}, href="/tokens") #{("Tokens")}
+            li.nav-item
+              a.nav-link.text-uppercase(class={active: page === "coinbase"}, class={"text-decoration-underline": page === "coinbase"}, href="/coinbase") #{("Coinbase")}
+            li.nav-item
+              a.nav-link.text-uppercase(href="/keys-home") #{("Keys & Signing")}
 
     block content
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js", integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p", crossorigin="anonymous")
+    script(src="/javascripts/lib/offcanvas.js")

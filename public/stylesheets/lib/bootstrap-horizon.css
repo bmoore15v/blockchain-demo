@@ -3,7 +3,10 @@
   overflow-y: hidden;
   white-space: nowrap;
 }
-.row-horizon > [class*="col-lg"], .row-horizon > [class*="col-md"], .row-horizon > [class*="col-sm"], .row-horizon > [class*="col-xs"] {
+.row-horizon > [class*="col-lg"],
+.row-horizon > [class*="col-md"],
+.row-horizon > [class*="col-sm"],
+.row-horizon > [class*="col-xs"] {
   float: none;
   display: inline-block;
   white-space: normal;

@@ -1,19 +1,17 @@
 extends layout
 
 block content
-  .container
-
-    h1 SHA256 #{__('Hash')}
-    .well#well1
-      form.form-horizontal
-
-        .form-group
-          label.col-sm-2.control-label(for='data') #{__('Data')}:
+  main.container
+    h1.text-uppercase #{('SHA256 Hash')}
+    .card.bg-light#card1
+      form.card-body
+        .row.mb-3
+          label.col-sm-2.col-form-label.text-end(for='data') #{('Data')}:
           .col-sm-10
             textarea#data.form-control(rows='10', onkeyup='$("#hash").val(sha256())')
 
-        .form-group
-          label.col-sm-2.control-label(for='hash') #{__('Hash')}:
+        .row.mb-3
+          label.col-sm-2.col-form-label.text-end(for='hash') #{('Hash')}:
           .col-sm-10
             input#hash.form-control(type='text', disabled)
 
